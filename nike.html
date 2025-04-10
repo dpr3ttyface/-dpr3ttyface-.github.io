@@ -1,27 +1,33 @@
-int potPin = A0; // Potentiometer connected to A0
-int greenLED = 9; // Green LED on pin 9
-int redLED = 10; // Red LED on pin 10
-int potValue; // Store potentiometer value
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Моят Личен Сайт</title>
 
-void setup () {
-  pinMode (greenLED, OUTPUT) ;
-  pinMode (redLED, OUTPUT) ;
-  Serial. begin (9600); // For debugging
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-}
+  <!-- Персонален CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-void loop () {
-    potValue = analogRead (potPin); // Read potentiometer value
-    Serial.println (potValue); // Print value to Serial Monitor
+  <div class="container py-5 text-center">
+    <img src="https://avatars.githubusercontent.com/u/9919?s=280&v=4" alt="Аватар" width="120" class="mb-4 rounded-circle shadow" />
+    <h1 class="display-4 text-primary">Здравей, аз съм Твоето Име!</h1>
+    <p class="lead">Това е моят личен сайт, хостнат безплатно чрез GitHub Pages.</p>
 
-  if(potValue < 150) {
-       digitalWrite (greenLED, HIGH) ; 
-       digitalWrite (redLED, LOW) ;
-       
-    } else {
-        digitalWrite (greenLED, LOW) ; 
-        digitalWrite (redLED, HIGH) ;
-    }
-    delay (100); // Small delay for stability
-}
-       
+    <a href="https://github.com/твоето-потребителско-име" target="_blank" class="btn btn-dark mt-3">
+      Виж моя GitHub профил
+    </a>
+  </div>
+
+  <footer class="text-center py-3 text-muted">
+    © 2025 Твоето Име
+  </footer>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
