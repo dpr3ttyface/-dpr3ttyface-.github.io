@@ -1,2 +1,27 @@
-├── index.html
-├── style.css
+int potPin = A0; // Potentiometer connected to A0
+int greenLED = 9; // Green LED on pin 9
+int redLED = 10; // Red LED on pin 10
+int potValue; // Store potentiometer value
+
+void setup () {
+  pinMode (greenLED, OUTPUT) ;
+  pinMode (redLED, OUTPUT) ;
+  Serial. begin (9600); // For debugging
+
+}
+
+void loop () {
+    potValue = analogRead (potPin); // Read potentiometer value
+    Serial.println (potValue); // Print value to Serial Monitor
+
+  if(potValue < 150) {
+       digitalWrite (greenLED, HIGH) ; 
+       digitalWrite (redLED, LOW) ;
+       
+    } else {
+        digitalWrite (greenLED, LOW) ; 
+        digitalWrite (redLED, HIGH) ;
+    }
+    delay (100); // Small delay for stability
+}
+       
